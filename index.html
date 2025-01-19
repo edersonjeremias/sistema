@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema VM KIDS</title>
+    <style>
+        body {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0px;
+            background-color: rgb(65, 59, 59);
+            
+        }
+       
+        .menu {
+            display: inline-block;
+            position: relative;
+            margin: 0px;
+            font-size: 12px;
+        }
+        .menu-button {
+            cursor: pointer;
+            padding: 5px;
+            border: 0px solid #494242;
+            background-color: #494242;
+            color: #f8f5f5;
+
+            display: inline-block;
+            width: 110px;
+            text-align: center;
+        }
+        .menu-pop-up {
+            display: none;
+            position: absolute;
+            background-color: #494242;
+            border: 1px solid rgb(136, 138, 140);
+            padding: 10px;
+            z-index: 1000;
+            width: auto;
+            max-width: 300px;
+        }
+        .menu-pop-up a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #f8f5f5;
+            font-size: 10px;
+            width: 110px;
+
+        }
+        .menu-pop-up a:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 40px);
+            border: none;
+            
+            
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu">
+    <div class="menu-button">Vendas</div>
+    <div class="menu-pop-up">
+        <a href="#" onclick="openLink('https://docs.google.com/spreadsheets/u/0/d/1f-yHVd2Nc6xbcN49zbD0WZf824jxYvEhoHshgLvp_5I/edit?usp=drive_fs', 'iframe1')">Vendas</a>
+        <a href="https://lookerstudio.google.com/u/0/reporting/4cdfc6a3-026d-4795-a3e2-d9e5a3c7361f/page/p_90taz7xdod", target="_blank">Relatorio</a>
+        <a href="#" onclick="openLink('https://www.exemplo2.com', 'iframe1')">null</a>
+        <a href="#" onclick="openLink('https://www.exemplo3.com', 'iframe1')">null</a>
+    </div>
+</div>
+<div class="menu">
+    <div class="menu-button">Produção</div>
+    <div class="menu-pop-up">
+        <a href="#" onclick="openLink('https://docs.google.com/spreadsheets/d/19VsQoV08Zs2HhA5f8W3CG-TLeOAhCnaIHQNMy-DMqZE/edit?gid=482565750#gid=482565750', 'iframe2')">Produção</a>
+        <a href="#" onclick="openLink('https://www.exemplo5.com', 'iframe2')">Pós separação</a>
+        <a href="#" onclick="openLink('https://www.exemplo6.com', 'iframe2')">Pós </a>
+        <a href="#" onclick="openLink('https://docs.google.com/spreadsheets/d/1RwZFGfcjNIJxh0VCgq8Ool7W7e1uEqU9Hs0Hu0Mmsvg/edit?gid=1087437619#gid=1087437619', 'iframe2')">Charge</a>
+
+    </div>
+</div>
+<div class="menu">
+    <div class="menu-button">Contas</div>
+    <div class="menu-pop-up">
+        <a href="#" onclick="openLink('https://docs.google.com/spreadsheets/d/1cLy6zJri2gmFdkC6FL_F3UjNoVcsQMBX0v3NfkkfgAo/edit?gid=1552263295#gid=1552263295', 'iframe3')">Clientes</a>
+        <a href="#" onclick="openLink('https://docs.google.com/spreadsheets/d/1x2xM-IHx6A1cQlGBey-slPk-5584UDMLOls1kT6U9mc/edit?gid=1671533855#gid=1671533855', 'iframe3')">Compras</a>
+        <a href="#" onclick="openLink('https://docs.google.com/spreadsheets/d/1v164wXB3BFOD8YInItxr9B-vrEj33EIwVuFAL5W7CR4/edit?gid=0#gid=0', 'iframe3')">Contas a receber</a>
+        <a href="#" onclick="openLink('https://docs.google.com/spreadsheets/d/1aeayOMJyDaaXlDnQJGxqtgZRz1rCjh3JOpEIhwIclgM/edit?gid=400902918#gid=400902918', 'iframe3')">Contas a pagar</a>
+
+    </div>
+</div>
+<div class="menu">
+    <div class="menu-button">Contas externas</div>
+    <div class="menu-pop-up">
+        <a href="https://www.instagram.com/", target="_blank">Instagram</a>
+        <a href="https://www.bling.com.br/inicio#/", target="_blank">Bling</a>
+        <a href="https://melhorenvio.com.br/painel/", target="_blank">Melhor Envio</a>
+        <a href="https://app.manychat.com/fb855931/cms/files/content20231121193609_672652", target="_blank">Manychat</a>
+        <a href="https://cotacao.melhorenvio.com.br/produto/f49669ba5ed797db33a2b9811ab30d4f7a4c0b12d850bcaeac3ef41e31439e561e1b427b627b1c589f9057a56ca8b6dcbd673c823cac1942d926904ef0082ce4", target="_blank">Cotação de frete</a>
+        <a href="https://spi.postal.net.br/visualset/index.html#", target="_blank">Declaração correio</a>
+        <hr>
+
+
+        
+
+    </div>
+</div>
+
+<iframe id="iframe1" src="" style="display: none;"></iframe>
+<iframe id="iframe2" src="" style="display: none;"></iframe>
+<iframe id="iframe3" src="" style="display: none;"></iframe>
+<iframe id="iframe4" src="" style="display: none;"></iframe>
+
+
+<script>
+    const menus = document.querySelectorAll('.menu');
+
+    menus.forEach((menu) => {
+        const menuButton = menu.querySelector('.menu-button');
+        const menuPopUp = menu.querySelector('.menu-pop-up');
+
+        menuButton.addEventListener('mouseover', function() {
+            menuPopUp.style.display = 'block';
+        });
+
+        menuButton.addEventListener('mouseout', function() {
+            menuPopUp.style.display = 'none';
+        });
+
+        menuPopUp.addEventListener('mouseover', function() {
+            menuPopUp.style.display = 'block';
+        });
+
+        menuPopUp.addEventListener('mouseout', function() {
+            menuPopUp.style.display = 'none';
+        });
+    });
+
+    function openLink(url, iframeId) {
+        document.getElementById(iframeId).src = url;
+        document.getElementById(iframeId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
